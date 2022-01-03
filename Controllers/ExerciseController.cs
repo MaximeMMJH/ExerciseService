@@ -28,6 +28,13 @@ namespace ExerciseService.Controllers
         }
 
         [HttpGet]
+        [Route("/exercises/ping")]
+        public IActionResult Ping()
+        {
+            return Ok("Hello world!");
+        }
+
+        [HttpGet]
         [Produces(MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(ExerciseJsonModel[]), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(string), StatusCodes.Status400BadRequest)]
