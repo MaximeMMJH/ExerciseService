@@ -1,6 +1,7 @@
 ﻿using ExerciseService.Logic;
 using ExerciseService.Models;
 using ExerciseService.Transformers;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -14,6 +15,7 @@ namespace ExerciseService.Controllers
 {
     [ApiController]
     [Route("/exercises")]
+    [Authorize(AuthenticationSchemes = "Bearer")]
     public class ExerciseController : Controller
     {
         private readonly ILogger<ExerciseController> logger;
